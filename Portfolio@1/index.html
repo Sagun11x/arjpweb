@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Singer Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            color: white;
+            background-color: black;
+            margin: 0;
+            padding: 0;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .container {
+            width: 90%;
+            margin: 0 auto;
+            padding: 20px 0;
+        }
+
+        .header, .section, .footer {
+            padding: 40px 0;
+        }
+
+        .header, .footer {
+            text-align: center;
+        }
+
+        .header h1, .section h2, .footer p {
+            margin: 0;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+        }
+
+        .section {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .section-text {
+            flex: 1;
+            margin: 20px;
+            text-align: center;
+        }
+
+        .section-text h2 {
+            font-size: 1.8em;
+        }
+
+        .image {
+            flex: 1;
+            margin: 20px;
+        }
+
+        .image img, .video iframe {
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .video-container {
+            flex: 1;
+            text-align: center;
+        }
+
+        .nav {
+            background-color: #000;
+            overflow: hidden;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        .nav a {
+            display: inline-block;
+            color: white;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        .nav a:hover {
+            background-color: #444;
+            color: white;
+        }
+
+        .footer {
+            background-color: #222;
+        }
+
+        .contact-info {
+            list-style: none;
+            padding: 0;
+        }
+
+        .contact-info li {
+            margin: 5px 0;
+        }
+
+        .social-icons i {
+            margin: 0 10px;
+            font-size: 40px;
+            cursor: pointer;
+        }
+
+        .dark-mode .social-icons i {
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            .section {
+                flex-direction: column;
+            }
+
+            .header h1 {
+                font-size: 2em;
+            }
+
+            iframe {
+                width: 100% !important;
+                height: auto !important;
+            }
+
+            .section-text h2 {
+                font-size: 1.5em;
+            }
+        }
+        .toggle-btn {
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    background-color: white;
+    color: black;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.toggle-btn i {
+    font-size: 20px;
+}
+
+
+.gallery-section {
+    padding: 20px;
+}
+
+.gallery-section h2 {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 10px;
+}
+
+.gallery-grid img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+
+  .gallery-item img:hover {
+    transform: scale(1.05);
+  }
+ 
+ 
+  .image-section {
+    padding: 20px;
+    background-color: #000000;
+  }
+
+  .image-section h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2rem;
+  }
+
+  .image-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 10px;
+  }
+
+  .image-item {
+    text-align: center;
+  }
+
+  /* Set a fixed height for all image boxes and use object-fit to ensure uniformity */
+  .image-item img {
+    width: 100%;
+    height: 250px; /* Fixed height for uniformity */
+    object-fit: cover; /* Ensures the image maintains its aspect ratio and fills the box */
+    border-radius: 8px;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .image-item img:hover {
+    transform: scale(1.05);
+  }
+
+  .image-item p {
+    margin-top: 10px;
+    font-size: 1rem;
+    color: #333;
+  }
+
+
+</style>
+
+
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <div class="nav">
+        <a href="#about">About</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#videos">Videos</a>
+        <a href="#interviews">Interviews</a>
+        <a href="#blogs">Blog</a>
+        <a href="#awards">Awards</a>
+        <a href="#upcoming-projects">Upcoming Projects</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#contact">Contact</a>
+    </div>
+
+    <div class="container">
+        <!-- Header -->
+        <div class="header" id="header">
+            <h1>Arjun Poudel</h1>
+            <p>SINGER & SONGWRITER</p>
+        </div>
+
+        <!-- About Section -->
+        <div class="section" id="about">
+            <div class="section-text">
+                <h2>About Me</h2>
+                <p>Arjun Poudel– Singer, Musician, Lyricist, and Producer
+
+                    With a diverse and dynamic career in music, I have contributed my talents as a singer, musician, lyricist, and producer across multiple projects in the Nepali music industry.
+                    
+                    As a Singer,I have released various songs across multiple platforms:
+                    -Dekhirahanchhu Jahile(2018) – Budha Subba
+                    -Mera Kala Dari (2020) – 8K Everest Motion Picture  
+                    - Babaal (2019) – Arjun Poudel Channel  
+                    - Hiu Jsti Gori (2020) – Arjun Poudel Channel  
+                    
+                    As a Musician and Lyricist, I’ve created some memorable pieces that have resonated with many listeners:
+                    - Piyera Nasha (2019) – Arjun Poudel Channel  
+                    - Manaka Kura (2021) – Arjun Poudel Channel  
+                    - Yo Dil Chorera (2020) – 3D Nepali Music / Kumar Thapa Magar  
+                     
+                    In addition, I’ve taken on the role of ‘Producer’ for the short movie “Chatpate Bhaiya” (2019) – Budha Subba Digital.  
+                    
+                    I’ve also appeared in interviews and discussions about my work. Notable appearances include the ‘Babaal’ song recording interview on Nagarik Online TV.  
+                    
+                    Explore my music journey and stay tuned for more exciting projects..</p>
+            </div>
+            <div class="image">
+                <img alt="Singer portrait black and white" src="AboutMe/b&w.png">
+            </div>
+        </div>
+
+        <!-- Music Portfolio Section -->
+        <div class="section" id="portfolio">
+            <div class="image">
+                <a id="musicLink" href="#" target="_blank">
+                    <img id="musicPortfolioImg" alt="Album cover art" src="MusicPort/coverArt.png">
+                </a>
+            </div>
+            <div class="section-text">
+                <h2>Music Portfolio</h2>
+                <p>Explore my latest albums and singles...</p>
+            </div>
+        </div>
+
+        <!-- Videos Section -->
+        <div class="section" id="videos">
+            <div class="section-text">
+                <h2>Latest Video</h2>
+                <p>Watch my latest music video.</p>
+            </div>
+            <div class="video-container">
+                <iframe id="videoFrame" width="560" height="315" src="https://www.youtube.com/embed/5pAXxJOMyIQ?rel=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            
+        </div>
+
+        <!-- Interviews Section -->
+        <section id="interviews" class="image-section">
+            <div class="container">
+              <h2>Interviews</h2>
+              <div class="image-grid">
+                <div class="image-item">
+                  <img src="Gallery/IMG_8940.JPG" alt="Interview 1">
+                </div>
+                <div class="image-item">
+                  <img src="Gallery/IMG_8943.JPG" alt="Interview 2">
+                </div>
+                <div class="image-item">
+                  <img src="Gallery/IMG_8944 2.JPG" alt="Interview 3">
+                </div>
+                <div class="image-item">
+                    <img src="Gallery/IMG_8943.JPG" alt="Interview 2">
+                  </div><div class="image-item">
+                    <img src="Gallery/IMG_8943.JPG" alt="Interview 2">
+                  </div><div class="image-item">
+                    <img src="Gallery/IMG_8943.JPG" alt="Interview 2">
+                  </div>
+                <!-- Add more interview images here -->
+              </div>
+            </div>
+          </section>
+          
+
+        <!-- Blog Section -->
+        <section id="blogs" class="image-section">
+            <div class="container">
+              <h2>Blogs</h2>
+              <div class="image-grid">
+                <div class="image-item">
+                  <img src="Gallery/IMG_7340.JPG" alt="Blog 1">
+
+                </div>
+                <div class="image-item">
+                  <img src="Gallery/IMG_8932.jpg" alt="Blog 2">
+                </div>
+                <div class="image-item">
+                  <img src="Gallery/IMG_8936 3.JPG" alt="Blog 3">
+                </div> <div class="image-item">
+                    <img src="Gallery/IMG_8936 3.JPG" alt="Blog 3">
+                  </div> <div class="image-item">
+                    <img src="Gallery/IMG_8936 3.JPG" alt="Blog 3">
+                  </div> <div class="image-item">
+                    <img src="Gallery/IMG_8936 3.JPG" alt="Blog 3">
+                  </div>
+                <!-- Add more blog images here -->
+              </div>
+            </div>
+          </section>
+          
+<!-- Awards Section -->
+<section id="awards" class="image-section">
+    <div class="container">
+        <h2>Awards</h2>
+        <div class="image-grid">
+            <!-- Award 1 -->
+            <div class="image-item">
+                <img src="Gallery/IMG_8998.JPG" alt="Award 1">
+                <p>Award Title 1</p>
+            </div>
+
+            <!-- Award 2 -->
+            <div class="image-item">
+                <img src="Gallery/IMG_8937 2.JPG" alt="Award 2">
+                <p>Award Title 2</p>
+            </div>
+
+            <!-- Award 3 -->
+            <div class="image-item">
+                <img src="Gallery/IMG_8939.JPG" alt="Award 3">
+                <p>Award Title 3</p>
+            </div>
+
+            <!-- Award 4 -->
+            <div class="image-item">
+                <img src="Gallery/IMG_8939.JPG" alt="Award 4">
+                <p>Award Title 4</p>
+            </div>
+
+            <!-- Award 5 -->
+            <div class="image-item">
+                <img src="Gallery/IMG_8939.JPG" alt="Award 5">
+                <p>Award Title 5</p>
+            </div>
+            
+            <!-- Add more award images here as needed -->
+        </div>
+    </div>
+</section>
+
+          
+
+        <!-- Upcoming Projects Section -->
+        <div class="section" id="upcoming-projects">
+            <div class="section-text">
+                <h2>Upcoming Projects</h2>
+            </div>
+            <div class="image">
+                <img alt="Upcoming project" src="commingSoon/Comming Soon.jpg">
+            </div>
+        </div>
+
+        <!-- Gallery Section -->
+        <section id="gallery" class="gallery-section">
+            <h2>Gallery</h2>
+            <div class="gallery-grid">
+                <img src="Gallery/IMG_7340.JPG" alt="Gallery Image 1">
+                <img src="Gallery/IMG_8932.jpg" alt="Gallery Image 2">
+                <img src="Gallery/IMG_8936 3.JPG" alt="Gallery Image 3">
+                <img src="Gallery/IMG_8998.JPG" alt="Gallery Image 4">
+                <img src="Gallery/IMG_8937 2.JPG" alt="Gallery Image 5">
+                <img src="Gallery/IMG_8939.JPG" alt="Gallery Image 6">
+                <img src="Gallery/IMG_8940.JPG" alt="Gallery Image 7">
+                <img src="Gallery/IMG_8943.JPG" alt="Gallery Image 8">
+                <img src="Gallery/IMG_8944 2.JPG" alt="Gallery Image 9">
+                <img src="Gallery/IMG_8945 2.JPG" alt="Gallery Image 10">
+                <img src="Gallery/IMG_8953.JPG" alt="Gallery Image 11">
+                <img src="Gallery/IMG_8957.JPG" alt="Gallery Image 12">
+                <img src="Gallery/IMG_8958.JPG" alt="Gallery Image 13">
+                <img src="Gallery/IMG_8959.JPG" alt="Gallery Image 14">
+                <img src="Gallery/IMG_8986.JPG" alt="Gallery Image 15">
+                <img src="Gallery/IMG_8992.JPG" alt="Gallery Image 16">
+                <img src="Gallery/IMG_8993.JPG" alt="Gallery Image 17">
+                <img src="Gallery/IMG_8996.JPG" alt="Gallery Image 18">
+                <img src="Gallery/IMG_8997.JPG" alt="Gallery Image 19">
+            </div>
+        </section>
+        
+
+
+        <!-- Footer -->
+        <div class="footer" id="contact">
+            <p>Contact Me</p>
+            <ul class="contact-info">
+                <li>Address: Nepal</li>
+                <li>Email: mail.arjunpoudel@gmail.com</li>
+                <li>Phone: +977 9857088655</li>
+            </ul>
+            <div class="social-icons">
+                <a href="https://www.youtube.com/user/MrArjunprasad" target="_blank" style="color:#FF0000;"><i class="fab fa-youtube"></i></a>
+                <a href="https://www.facebook.com/ARJUNmangecau" target="_blank" style="color:#114bc9;"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.instagram.com/arjun_music_artist/" target="_blank" style="color:#E1306C;"><i class="fab fa-instagram"></i></a>
+                <a href="https://twitter.com/arjunmusicnepal" target="_blank" style="color:#f5ffff;"><i class="fab fa-x"></i></a>
+                <a href="https://twitter.com/arjunmusicnepal" target="_blank" style="color:#9a1a9a;"><i class="fab fa-tiktok"></i></a>
+                <a href="https://twitter.com/arjunmusicnepal" target="_blank" style="color:#6fff00;"><i class="fab fa-spotify"></i></a>
+                <a href="https://twitter.com/arjunmusicnepal" target="_blank" style="color:#3c7dd3;"><i class="fab fa-linkedin"></i></a>
+                <a href="https://twitter.com/arjunmusicnepal" target="_blank" style="color:#3c7dd3;"><i class="fab fa-docker"></i></a>
+                <a href="https://twitter.com/arjunmusicnepal" target="_blank" style="color:#3c7dd3;"><i class="fab fa-aws"></i></a>
+
+
+
+            </div>
+            
+        </div>
+    </div>
+
+    
+
+    <script>
+        // Updated Music Portfolio Image Change and Link Update Every 5 Seconds
+        var musicPortfolioImages = [
+            { src: "MusicPort/musicPort01.PNG", link: "https://youtu.be/RfCKYZIJj40?si=i0IwY9lF3801aL2e" },
+            { src: "MusicPort/MusicPort02.PNG", link: "https://youtu.be/8YzUsWKPfw4?si=Hhiod5cFlC2nDSg_" },
+            { src: "MusicPort/MusicPort.03.PNG", link: "https://youtu.be/0qci1UQIWhE?si=jrHpUu2vtG2Fdq4-" },
+            { src: "MusicPort/MusicPort.04.PNG", link: "https://youtu.be/fDWv24jW_jw?si=FQW4UHVnMkQ6xqzk" },
+            { src: "MusicPort/MusicPort.05.PNG", link: "https://youtu.be/UTK-l9BuzDQ?si=_voeoCMzHqGA8_vE" },
+            { src: "MusicPort/MusicPort.06.PNG", link: "https://youtu.be/5pAXxJOMyIQ?si=-qUhS_uwyKafObaN" },
+            { src: "MusicPort/MusicPort.07.JPG", link: "https://youtu.be/kgVMX__jULg?si=-erhAdzhL_rxZTOv" },
+            { src: "MusicPort/MusicPort08.PNG", link: "https://youtu.be/qPe8ty9DajU?si=Rj0FjaGSoDhe1aNO" }
+        ];
+        var musicPortfolioIndex = 0;
+        function changeMusicPortfolioImage() {
+            document.getElementById("musicPortfolioImg").src = musicPortfolioImages[musicPortfolioIndex].src;
+            document.getElementById("musicLink").href = musicPortfolioImages[musicPortfolioIndex].link;
+            musicPortfolioIndex = (musicPortfolioIndex + 1) % musicPortfolioImages.length;
+        }
+        setInterval(changeMusicPortfolioImage, 5000);  // Updated to 5 seconds
+    
+        // Update interview images and links
+        var interviewImages = [
+            { src: "interView/inter01.PNG", link: "https://youtu.be/zjeuuj_iSUU?si=2MYgeTejqfeLJALE" },
+            { src: "interView/inter02.PNG", link: "https://youtu.be/yoittQ1tQVo?si=AYTQBXb0sk3JCzWp" }
+        ];
+        var interviewIndex = 0;
+        function changeInterviewImage() {
+            document.getElementById("interviewImg").src = interviewImages[interviewIndex].src;
+            document.getElementById("interviewLink").href = interviewImages[interviewIndex].link;
+            interviewIndex = (interviewIndex + 1) % interviewImages.length;
+        }
+        setInterval(changeInterviewImage, 5000);  // Update every 5 seconds
+
+    </script>
+    
+</body>
+</html>
+  
